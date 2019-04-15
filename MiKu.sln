@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2009
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiKu", "MiKu\MiKu.csproj", "{5D3EB624-F47E-4575-AD59-01794C5A2654}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotifyIconWpf", "NotifyIconWpf\NotifyIconWpf.csproj", "{7AC63864-7638-41C4-969C-D3197EF2BED9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppIn", "AppIn\AppIn.csproj", "{4EB5344D-F138-40D2-90FB-92929730DEF6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5D3EB624-F47E-4575-AD59-01794C5A2654}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D3EB624-F47E-4575-AD59-01794C5A2654}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D3EB624-F47E-4575-AD59-01794C5A2654}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D3EB624-F47E-4575-AD59-01794C5A2654}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AC63864-7638-41C4-969C-D3197EF2BED9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AC63864-7638-41C4-969C-D3197EF2BED9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AC63864-7638-41C4-969C-D3197EF2BED9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AC63864-7638-41C4-969C-D3197EF2BED9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EB5344D-F138-40D2-90FB-92929730DEF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EB5344D-F138-40D2-90FB-92929730DEF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EB5344D-F138-40D2-90FB-92929730DEF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EB5344D-F138-40D2-90FB-92929730DEF6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4A6F9188-6ECC-49D0-AFAC-F96657694D43}
+	EndGlobalSection
+EndGlobal

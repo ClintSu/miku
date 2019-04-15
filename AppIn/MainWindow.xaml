@@ -1,0 +1,282 @@
+﻿<Window
+    x:Class="AppIn.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:AppIn"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="添加应用" 
+    Width="550" WindowStartupLocation="CenterScreen"
+    Height="350"
+    mc:Ignorable="d">
+
+    <Window.Resources>
+        <SolidColorBrush x:Key="ListBox.Static.Border" Color="#FFABADB3" />
+        <SolidColorBrush x:Key="ListBox.Disabled.Background" Color="#FFFFFFFF" />
+        <SolidColorBrush x:Key="ListBox.Disabled.Border" Color="#FFD9D9D9" />
+        <Style x:Key="ThumListBoxStyle" TargetType="{x:Type ListBox}">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="{StaticResource ListBox.Static.Border}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+            <Setter Property="ScrollViewer.CanContentScroll" Value="true" />
+            <Setter Property="ScrollViewer.PanningMode" Value="Both" />
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="SelectionMode" Value="Single" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListBox}">
+                        <Border
+                            x:Name="Bd"
+                            Padding="1"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            SnapsToDevicePixels="true">
+                            <ScrollViewer Padding="{TemplateBinding Padding}" VerticalScrollBarVisibility="Auto">
+                                <UniformGrid Columns="4" IsItemsHost="True" />
+                            </ScrollViewer>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter TargetName="Bd" Property="Background" Value="{StaticResource ListBox.Disabled.Background}" />
+                                <Setter TargetName="Bd" Property="BorderBrush" Value="{StaticResource ListBox.Disabled.Border}" />
+                            </Trigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsGrouping" Value="true" />
+                                    <Condition Property="VirtualizingPanel.IsVirtualizingWhenGrouping" Value="false" />
+                                </MultiTrigger.Conditions>
+                                <Setter Property="ScrollViewer.CanContentScroll" Value="false" />
+                            </MultiTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ThumListBoxItemStyle" TargetType="{x:Type ListBoxItem}">
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="Padding" Value="4,1" />
+            <Setter Property="Margin" Value="0,15" />
+            <Setter Property="Height" Value="60" />
+            <Setter Property="Width" Value="60" />
+            <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
+            <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="IsSelected" Value="{Binding IsSelected}" />
+            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                        <Grid Name="grid" Background="Transparent">
+
+                            <Image Source="{Binding BitmapImage}" Margin="5" />
+                            <CheckBox Name="check" IsChecked="{TemplateBinding IsSelected}" />
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter TargetName="check" Property="Background" Value="#405c6bff" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="TypeListBoxStyle" TargetType="{x:Type ListBox}">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="{StaticResource ListBox.Static.Border}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+            <Setter Property="ScrollViewer.CanContentScroll" Value="true" />
+            <Setter Property="ScrollViewer.PanningMode" Value="Both" />
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="SelectionMode" Value="Single" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListBox}">
+                        <Border
+                            x:Name="Bd"
+                            Padding="1"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            SnapsToDevicePixels="true">
+                            <ScrollViewer Padding="{TemplateBinding Padding}" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+                                <StackPanel Orientation="Horizontal" IsItemsHost="True"  />
+                            </ScrollViewer>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter TargetName="Bd" Property="Background" Value="{StaticResource ListBox.Disabled.Background}" />
+                                <Setter TargetName="Bd" Property="BorderBrush" Value="{StaticResource ListBox.Disabled.Border}" />
+                            </Trigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsGrouping" Value="true" />
+                                    <Condition Property="VirtualizingPanel.IsVirtualizingWhenGrouping" Value="false" />
+                                </MultiTrigger.Conditions>
+                                <Setter Property="ScrollViewer.CanContentScroll" Value="false" />
+                            </MultiTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="TypeListBoxItemStyle" TargetType="{x:Type ListBoxItem}">
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="Padding" Value="4,1" />
+            <Setter Property="Height" Value="30" />
+            <Setter Property="Margin" Value="0,10"></Setter>
+            <Setter Property="Width" Value="100" />
+            <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
+            <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                        <Grid Name="grid" Background="Transparent">
+                            <RadioButton Name="radioButton" Content="{Binding Name}" GroupName="list" 
+                                         IsChecked="{TemplateBinding IsSelected}" VerticalAlignment="Center" FontSize="16" 
+                                         VerticalContentAlignment="Center"></RadioButton>
+
+                            <Grid Background="Transparent"></Grid>
+                        </Grid>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter TargetName="radioButton" Property="Background" Value="#405c6bff" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Window.Resources>
+
+    <Grid>
+        <Grid  Name="grid1"  Visibility="Visible">
+            <Border
+                Name="border"
+                Width="400"
+                Height="200"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                AllowDrop="True"
+                BorderThickness="1.5"
+                CornerRadius="5"
+                DragEnter="border_DragEnter"
+                DragLeave="border_DragLeave"
+                Drop="border_Drop">
+                <Border.BorderBrush>
+                    <LinearGradientBrush MappingMode="Absolute" SpreadMethod="Repeat" StartPoint="0,5" EndPoint="5,0">
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Offset="0" Color="Blue" />
+                            <GradientStop Offset="0.2" Color="Blue" />
+                            <GradientStop Offset="0.4" Color="Transparent" />
+                            <GradientStop Offset="0.6" Color="Transparent" />
+                            <GradientStop Offset="0.8" Color="Blue" />
+                            <GradientStop Offset="1" Color="Blue" />
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Border.BorderBrush>
+
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image
+                        Name="image"
+                        Width="100"
+                        Height="100"
+                        Opacity="0.5"
+                        Source="add.png" />
+                    <TextBlock
+                        Name="txt"
+                        Margin="5"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Text="拖入应用单文件或应用主程序" />
+                </StackPanel>
+            </Border>
+        </Grid>
+
+        <Grid  Margin="20,10" Name="grid2" Visibility="Collapsed">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+
+            <!--应用类型-->
+            <StackPanel Grid.Row="0" Orientation="Horizontal">
+                <RadioButton
+                Name="only"
+                Margin="0,5" FontSize="16" VerticalContentAlignment="Center"
+                Checked="only_Checked"
+                Content="单文件"
+                IsChecked="False" />
+                <RadioButton
+                Name="file"
+                Margin="15,5" FontSize="16" VerticalContentAlignment="Center"
+                Checked="file_Checked"
+                Content="免安装"
+                IsChecked="False" />
+            </StackPanel>
+
+            <!--应用分类-->
+            <StackPanel Name="panelType" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center"  Visibility="Collapsed" >
+                <StackPanel Orientation="Horizontal"  Margin="0,0,5,0">
+                    <TextBlock Text="显示名称:" VerticalAlignment="Center" FontSize="16"></TextBlock>
+                    <TextBox Name="txtName" Margin="5,0" Width="160" Height="30" VerticalContentAlignment="Center" FontSize="14" BorderThickness="0,0,0,1"></TextBox>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="5,0,0,0">
+                    <TextBlock Text="程序类型:" VerticalAlignment="Center" FontSize="16"></TextBlock>
+                    <TextBox Name="txtType" Margin="5,0" Width="160" Height="30" VerticalContentAlignment="Center" FontSize="14" BorderThickness="0,0,0,1"></TextBox>
+                </StackPanel>
+
+            </StackPanel>
+
+            <!--应用缩略图-->
+            <ListBox Grid.Row="2" Style="{StaticResource ThumListBoxStyle}" ItemContainerStyle="{StaticResource ThumListBoxItemStyle}"
+            Name="listBox" BorderThickness="0"  Visibility="Collapsed"
+            VerticalAlignment="Top">
+            </ListBox>
+
+
+            <Border Grid.Row="3" BorderThickness="0,1,0,0" BorderBrush="Black"></Border>
+            <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button 
+                    Name="btnChecked"
+                    Width="100" BorderThickness="0"
+                    Height="30"
+                    Margin="10"
+                    VerticalAlignment="Center"
+                    Click="btnChecked_Click"
+                    Content="确定"
+                    IsEnabled="False" />
+                <Button 
+                    Name="btnClosed"
+                    Width="100" BorderThickness="0"
+                    Height="30"
+                    Margin="10"
+                    VerticalAlignment="Center"
+                    Click="btnClosed_Click"
+                    Content="取消"/>
+            </StackPanel>
+
+        </Grid>
+    </Grid>
+</Window>

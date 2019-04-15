@@ -1,0 +1,423 @@
+﻿<UserControl
+    x:Class="MiKu.ColorPicker"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Width="525"
+    Height="328"
+    MinWidth="482"
+    MinHeight="305">
+    <UserControl.Resources>
+        <DrawingBrush
+            x:Key="CheckerboardBrush"
+            AlignmentX="Left"
+            AlignmentY="Top"
+            Stretch="None"
+            TileMode="Tile"
+            Viewport="0,0,10,10"
+            ViewportUnits="Absolute">
+            <DrawingBrush.Drawing>
+                <DrawingGroup>
+                    <GeometryDrawing Brush="sc# 1,1,1">
+                        <GeometryDrawing.Geometry>
+                            <RectangleGeometry Rect="0,0,10,10" />
+                        </GeometryDrawing.Geometry>
+                    </GeometryDrawing>
+                    <GeometryDrawing Brush="sc# 0.5,0.5,0.5">
+                        <GeometryDrawing.Geometry>
+                            <RectangleGeometry Rect="0,0,5,5" />
+                        </GeometryDrawing.Geometry>
+                    </GeometryDrawing>
+                    <GeometryDrawing Brush="sc# 0.5,0.5,0.5">
+                        <GeometryDrawing.Geometry>
+                            <RectangleGeometry Rect="5,5,5,5" />
+                        </GeometryDrawing.Geometry>
+                    </GeometryDrawing>
+                </DrawingGroup>
+            </DrawingBrush.Drawing>
+        </DrawingBrush>
+    </UserControl.Resources>
+
+    <Grid
+        Width="479"
+        Height="329"
+        Background="White"
+        MouseUp="CanvasImage_MouseUp"
+        MouseWheel="AlphaSlider_MouseWheel">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35" />
+            <RowDefinition Height="200" />
+            <RowDefinition Height="64" />
+            <RowDefinition Height="6*" />
+        </Grid.RowDefinitions>
+        <StackPanel
+            Grid.Row="0"
+            Height="35"
+            HorizontalAlignment="Stretch"
+            Background="Black"
+            Orientation="Horizontal">
+            <Label
+                VerticalAlignment="Center"
+                Content="Pick swatch type"
+                FontWeight="Bold"
+                Foreground="White" />
+            <Image
+                x:Name="ImgSqaure1"
+                Width="20"
+                Height="20"
+                Margin="45,0,0,0"
+                MouseLeftButtonDown="Swatch_MouseLeftButtonDown"
+                Source="Images/ColorSwatchSquare1.png"
+                ToolTip="Color Swatch Square 1" />
+            <Image
+                x:Name="ImgSqaure2"
+                Width="20"
+                Height="20"
+                Margin="5,0,0,0"
+                MouseLeftButtonDown="Swatch_MouseLeftButtonDown"
+                Source="Images/ColorSwatchSquare2.png"
+                ToolTip="Color Swatch Square 2" />
+            <Image
+                x:Name="ImgCircle1"
+                Width="20"
+                Height="20"
+                Margin="5,0,0,0"
+                MouseLeftButtonDown="Swatch_MouseLeftButtonDown"
+                Source="Images/ColorSwatchCircle.png"
+                ToolTip="Color Swatch Circle" />
+        </StackPanel>
+        <Grid
+            x:Name="MainGrid"
+            Grid.Row="1"
+            Grid.RowSpan="2"
+            Margin="0,0,0,34"
+            MouseDown="CanvasImage_MouseDown"
+            MouseUp="CanvasImage_MouseUp">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="170" />
+                <ColumnDefinition Width="164" />
+                <ColumnDefinition Width="176" />
+            </Grid.ColumnDefinitions>
+
+            <!--  Colorbox, Column1  -->
+            <Grid
+                Grid.Row="0"
+                Grid.Column="0"
+                Margin="10,30,0,0">
+
+                <Border
+                    Width="154"
+                    Height="154"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    Background="White"
+                    BorderBrush="Black"
+                    BorderThickness="2" />
+                <!--  Selection, Column 0  -->
+                <Image
+                    x:Name="ColorImage"
+                    Width="150"
+                    Height="150"
+                    Margin="2"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    Source="Images/ColorSwatchSquare1.png" />
+                <Canvas
+                    x:Name="canvasImage"
+                    Width="150"
+                    Height="150"
+                    Margin="2"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    Background="Transparent"
+                    MouseDown="CanvasImage_MouseDown"
+                    MouseMove="CanvasImage_MouseMove"
+                    MouseUp="CanvasImage_MouseUp">
+                    <Ellipse
+                        x:Name="ellipsePixel"
+                        Canvas.Left="0"
+                        Canvas.Top="0"
+                        Width="8"
+                        Height="8"
+                        Fill="White"
+                        Stroke="Black" />
+                </Canvas>
+            </Grid>
+
+            <!--  Preview, Column 1  -->
+            <StackPanel
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                Margin="0,0,169,0"
+                MouseDown="CanvasImage_MouseDown"
+                MouseUp="CanvasImage_MouseUp"
+                Orientation="Vertical">
+                <Label
+                    Margin="5,0,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Content="Preview"
+                    FontWeight="Bold"
+                    Foreground="Black" />
+
+                <Border
+                    Width="154"
+                    Height="154"
+                    Margin="4,5,10,0"
+                    HorizontalAlignment="Left"
+                    Background="{StaticResource CheckerboardBrush}"
+                    BorderBrush="Black"
+                    BorderThickness="2">
+                    <InkPresenter
+                        Name="previewPresenter"
+                        Width="150"
+                        Height="150"
+                        Margin="0"
+                        MouseDown="CanvasImage_MouseDown"
+                        MouseUp="CanvasImage_MouseUp"
+                        Strokes="AOcBAxdIEESAgYAERYQBGwIAJAFGhAEbAgAkAQUBOBkgMgkA9P8CAekiOkUzCQD4nwIBWiA6RTgIAP4DAAAAgH8RAACAPx8JEQAAAAAAAPA/CpYBNIfm3uajgcQgUUiUkjUelEal0KkUBh0HichlM1mtJotZp9JodDl8jk8ZgcBiUOjUYl08m0+l0+lFCjksjESAh+kg6auNwaEwSBQiEQyLRKTRiVSiUSSORyLQ6JQSBIPFYnKZTL5fOZfMZXL4/H47DYLBYHFoJLIpEo9GgIP3OB5PlxLCJiZmU1MISSi4SJiS74+D4+4o" />
+                </Border>
+            </StackPanel>
+
+            <!--  TextBoxes, Column 2  -->
+            <StackPanel
+                Grid.Column="2"
+                Margin="0,0,28,0"
+                Orientation="Vertical">
+
+                <StackPanel Margin="0,30,0,0" Orientation="Horizontal">
+                    <Label
+                        Margin="5,0,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Content="A"
+                        FontWeight="Bold"
+                        Foreground="Black" />
+                    <Border
+                        Width="50"
+                        Height="30"
+                        Background="LightGray"
+                        BorderBrush="Black"
+                        BorderThickness="2"
+                        CornerRadius="5">
+                        <TextBox
+                            x:Name="txtAlpha"
+                            Margin="5,1,5,1"
+                            Padding="0,5,0,0"
+                            Background="LightGray"
+                            BorderBrush="Transparent"
+                            BorderThickness="0"
+                            IsReadOnly="True"
+                            IsTabStop="False"
+                            TextAlignment="Center" />
+                    </Border>
+                    <Border
+                        Width="50"
+                        Height="30"
+                        Margin="10,0,0,0"
+                        Background="LightGray"
+                        BorderBrush="Black"
+                        BorderThickness="2"
+                        CornerRadius="5">
+                        <TextBox
+                            x:Name="txtAlphaHex"
+                            Margin="5,1,5,1"
+                            Padding="0,5,0,0"
+                            Background="LightGray"
+                            BorderBrush="Transparent"
+                            BorderThickness="0"
+                            IsReadOnly="True"
+                            IsTabStop="False"
+                            TextAlignment="Center" />
+                    </Border>
+                </StackPanel>
+
+                <StackPanel Margin="0,5,0,0" Orientation="Horizontal">
+                    <Label
+                        Margin="5,0,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Content="R"
+                        FontWeight="Bold"
+                        Foreground="Black" />
+                    <Border
+                        Width="50"
+                        Height="30"
+                        Background="LightGray"
+                        BorderBrush="Black"
+                        BorderThickness="2"
+                        CornerRadius="5">
+                        <TextBox
+                            x:Name="txtRed"
+                            Margin="5,1,5,1"
+                            Padding="0,5,0,0"
+                            Background="LightGray"
+                            BorderBrush="Transparent"
+                            BorderThickness="0"
+                            IsReadOnly="True"
+                            IsTabStop="False"
+                            TextAlignment="Center" />
+                    </Border>
+                    <Border
+                        Width="50"
+                        Height="30"
+                        Margin="10,0,0,0"
+                        Background="LightGray"
+                        BorderBrush="Black"
+                        BorderThickness="2"
+                        CornerRadius="5">
+                        <TextBox
+                            x:Name="txtRedHex"
+                            Margin="5,1,5,1"
+                            Padding="0,5,0,0"
+                            Background="LightGray"
+                            BorderBrush="Transparent"
+                            BorderThickness="0"
+                            IsReadOnly="True"
+                            IsTabStop="False"
+                            TextAlignment="Center" />
+                    </Border>
+                </StackPanel>
+
+                <StackPanel Margin="0,5,0,0" Orientation="Horizontal">
+                    <Label
+                        Margin="5,0,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Content="G"
+                        FontWeight="Bold"
+                        Foreground="Black" />
+                    <Border
+                        Width="50"
+                        Height="30"
+                        Background="LightGray"
+                        BorderBrush="Black"
+                        BorderThickness="2"
+                        CornerRadius="5">
+                        <TextBox
+                            x:Name="txtGreen"
+                            Margin="5,1,5,1"
+                            Padding="0,5,0,0"
+                            Background="LightGray"
+                            BorderBrush="Transparent"
+                            BorderThickness="0"
+                            IsReadOnly="True"
+                            IsTabStop="False"
+                            TextAlignment="Center" />
+                    </Border>
+                    <Border
+                        Width="50"
+                        Height="30"
+                        Margin="10,0,0,0"
+                        Background="LightGray"
+                        BorderBrush="Black"
+                        BorderThickness="2"
+                        CornerRadius="5">
+                        <TextBox
+                            x:Name="txtGreenHex"
+                            Margin="5,1,5,1"
+                            Padding="0,5,0,0"
+                            Background="LightGray"
+                            BorderBrush="Transparent"
+                            BorderThickness="0"
+                            IsReadOnly="True"
+                            IsTabStop="False"
+                            TextAlignment="Center" />
+                    </Border>
+                </StackPanel>
+
+                <StackPanel Margin="0,5,0,0" Orientation="Horizontal">
+                    <Label
+                        Margin="5,0,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Content="B"
+                        FontWeight="Bold"
+                        Foreground="Black" />
+                    <Border
+                        Width="50"
+                        Height="30"
+                        Background="LightGray"
+                        BorderBrush="Black"
+                        BorderThickness="2"
+                        CornerRadius="5">
+                        <TextBox
+                            x:Name="txtBlue"
+                            Margin="5,1,5,1"
+                            Padding="0,5,0,0"
+                            Background="LightGray"
+                            BorderBrush="Transparent"
+                            BorderThickness="0"
+                            IsReadOnly="True"
+                            IsTabStop="False"
+                            TextAlignment="Center" />
+                    </Border>
+                    <Border
+                        Width="50"
+                        Height="30"
+                        Margin="10,0,0,0"
+                        Background="LightGray"
+                        BorderBrush="Black"
+                        BorderThickness="2"
+                        CornerRadius="5">
+                        <TextBox
+                            x:Name="txtBlueHex"
+                            Margin="5,1,5,1"
+                            Padding="0,5,0,0"
+                            Background="LightGray"
+                            BorderBrush="Transparent"
+                            BorderThickness="0"
+                            IsReadOnly="True"
+                            IsTabStop="False"
+                            TextAlignment="Center" />
+                    </Border>
+                </StackPanel>
+
+                <StackPanel Margin="0,5,0,0" Orientation="Horizontal">
+                    <Border
+                        Width="112"
+                        Height="30"
+                        Margin="22,0,0,0"
+                        Background="LightGray"
+                        BorderBrush="Black"
+                        BorderThickness="2"
+                        CornerRadius="5">
+                        <TextBox
+                            x:Name="txtAll"
+                            Margin="5,1,5,1"
+                            Padding="0,5,0,0"
+                            Background="LightGray"
+                            BorderBrush="Transparent"
+                            BorderThickness="0"
+                            IsReadOnly="True"
+                            IsTabStop="False"
+                            TextAlignment="Center" />
+                    </Border>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+
+        <!--  AlphaSlider  -->
+        <Border
+            x:Name="AlphaBorder"
+            Grid.Row="2"
+            Grid.ColumnSpan="2"
+            Height="40"
+            Margin="10,5,10,5"
+            BorderBrush="Black"
+            BorderThickness="2"
+            CornerRadius="5"
+            MouseWheel="AlphaSlider_MouseWheel">
+            <Slider
+                x:Name="AlphaSlider"
+                Margin="5"
+                VerticalAlignment="Center"
+                LargeChange="25"
+                Maximum="255"
+                Minimum="0"
+                Orientation="Horizontal"
+                SmallChange="1"
+                ValueChanged="AlphaSlider_ValueChanged"
+                Value="255" />
+        </Border>
+    </Grid>
+</UserControl>

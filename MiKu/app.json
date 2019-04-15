@@ -1,0 +1,562 @@
+[
+  {
+    "AppName": "CPU-Z",
+    "AppType": "系统工具",
+    "ExeName": "CPU-Z",
+    "ExeFolderName": "",
+    "HitNumber": 4
+  },
+  {
+    "AppName": "GPU-Z",
+    "AppType": "系统工具",
+    "ExeName": "GPU-Z",
+    "ExeFolderName": "",
+    "HitNumber": 0
+  },
+  {
+    "AppName": "radar",
+    "AppType": "系统工具",
+    "ExeName": "radar",
+    "ExeFolderName": "",
+    "HitNumber": 3
+  },
+  {
+    "AppName": "系统信息查看",
+    "AppType": "系统工具",
+    "ExeName": "Speccy",
+    "ExeFolderName": "Speccy",
+    "HitNumber": 0
+  },
+  {
+    "AppName": "温度检测",
+    "AppType": "系统工具",
+    "ExeName": "HWMonitor",
+    "ExeFolderName": "",
+    "HitNumber": 0
+  },
+  {
+    "AppName": "硬盘检测",
+    "AppType": "系统工具",
+    "ExeName": "DiskInfo",
+    "ExeFolderName": "",
+    "HitNumber": 1
+  },
+  {
+    "AppName": "进程管控",
+    "AppType": "系统工具",
+    "ExeName": "procexp",
+    "ExeFolderName": "",
+    "HitNumber": 1
+  },
+  {
+    "AppName": "注册表编辑",
+    "AppType": "系统工具",
+    "ExeName": "RegWorkshop",
+    "ExeFolderName": "RegWorkshop",
+    "HitNumber": 0
+  },
+  {
+    "AppName": "CCleaner",
+    "AppType": "系统工具",
+    "ExeName": "CCleaner",
+    "ExeFolderName": "",
+    "HitNumber": 3
+  },
+  {
+    "AppName": "鲁大师",
+    "AppType": "系统工具",
+    "ExeName": "ComputerZ_CN",
+    "ExeFolderName": "ComputerZ_CN",
+    "HitNumber": 0
+  },
+  {
+    "AppName": "进程优化",
+    "AppType": "系统工具",
+    "ExeName": "ProcessLassoPortable",
+    "ExeFolderName": "ProcessLassoPortable",
+    "HitNumber": 1
+  },
+  {
+    "AppName": "Dism++",
+    "AppType": "系统工具",
+    "ExeName": "Dism++x64",
+    "ExeFolderName": "Dism++",
+    "HitNumber": 5
+  },
+  {
+    "AppName": "内存清理",
+    "AppType": "系统工具",
+    "ExeName": "memreduct",
+    "ExeFolderName": "",
+    "HitNumber": 0
+  },
+  {
+    "AppName": "卸载工具",
+    "AppType": "系统工具",
+    "ExeName": "Uninstall_Tool",
+    "ExeFolderName": "",
+    "HitNumber": 16
+  },
+  {
+    "AppName": "磁盘分区",
+    "AppType": "系统工具",
+    "ExeName": "DiskGenius",
+    "ExeFolderName": "",
+    "HitNumber": 1
+  },
+  {
+    "AppName": "驱动精灵",
+    "AppType": "系统工具",
+    "ExeName": "DriverGenius",
+    "ExeFolderName": "",
+    "HitNumber": 3
+  },
+  {
+    "AppName": "Rufus启动盘",
+    "AppType": "系统工具",
+    "ExeName": "rufus",
+    "ExeFolderName": "",
+    "HitNumber": 0
+  },
+  {
+    "AppName": "AAct激活",
+    "AppType": "系统工具",
+    "ExeName": "AAct",
+    "ExeFolderName": "",
+    "HitNumber": 2
+  },
+  {
+    "AppName": "Autoruns",
+    "AppType": "系统工具",
+    "ExeName": "Autoruns",
+    "ExeFolderName": "",
+    "HitNumber": 3
+  },
+  {
+    "AppName": "关机控制",
+    "AppType": "系统工具",
+    "ExeName": "AutoOff",
+    "ExeFolderName": "",
+    "HitNumber": 0
+  },
+  {
+    "AppName": "多标签管理器",
+    "AppType": "系统工具",
+    "ExeName": "Clover",
+    "ExeFolderName": "Clover",
+    "HitNumber": 1
+  },
+  {
+    "AppName": "文件解锁",
+    "AppType": "系统工具",
+    "ExeName": "IObit Unlocker",
+    "ExeFolderName": "",
+    "HitNumber": 7
+  },
+  {
+    "AppName": "IP扫描",
+    "AppType": "系统工具",
+    "ExeName": "Advanced IP Scanner",
+    "ExeFolderName": "",
+    "HitNumber": 0
+  },
+  {
+    "AppName": "DisplayX",
+    "AppType": "系统工具",
+    "ExeName": "DisplayX",
+    "ExeFolderName": "",
+    "HitNumber": 0
+  },
+  {
+    "AppName": "Everything",
+    "AppType": "实用工具",
+    "ExeName": "Everything",
+    "ExeFolderName": "",
+    "HitNumber": 51
+  },
+  {
+    "AppName": "快速搜索",
+    "AppType": "实用工具",
+    "ExeName": "Wox",
+    "ExeFolderName": "",
+    "HitNumber": 0
+  },
+  {
+    "AppName": "文件加密",
+    "AppType": "实用工具",
+    "ExeName": "FileFriend",
+    "ExeFolderName": "",
+    "HitNumber": 0
+  },
+  {
+    "AppName": "批量重命名",
+    "AppType": "实用工具",
+    "ExeName": "BulkRenameUtility",
+    "ExeFolderName": "",
+    "HitNumber": 5
+  },
+  {
+    "AppName": "ARen重命名",
+    "AppType": "实用工具",
+    "ExeName": "ARen",
+    "ExeFolderName": "ARen",
+    "HitNumber": 1
+  },
+  {
+    "AppName": "文件恢复",
+    "AppType": "实用工具",
+    "ExeName": "R-Studio",
+    "ExeFolderName": "",
+    "HitNumber": 0
+  },
+  {
+    "AppName": "快速复制",
+    "AppType": "实用工具",
+    "ExeName": "fastcopy",
+    "ExeFolderName": "",
+    "HitNumber": 0
+  },
+  {
+    "AppName": "文件全能王",
+    "AppType": "实用工具",
+    "ExeName": "filemaster",
+    "ExeFolderName": "",
+    "HitNumber": 0
+  },
+  {
+    "AppName": "图片查看",
+    "AppType": "实用工具",
+    "ExeName": "xnview",
+    "ExeFolderName": "",
+    "HitNumber": 2
+  },
+  {
+    "AppName": "图片放大",
+    "AppType": "实用工具",
+    "ExeName": "PhotoZoom Pro 7",
+    "ExeFolderName": "PhotoZoom Pro 7",
+    "HitNumber": 0
+  },
+  {
+    "AppName": "图片去水印",
+    "AppType": "实用工具",
+    "ExeName": "Inpaint",
+    "ExeFolderName": "",
+    "HitNumber": 1
+  },
+  {
+    "AppName": "图标提取",
+    "AppType": "实用工具",
+    "ExeName": "ExtractIcon",
+    "ExeFolderName": "",
+    "HitNumber": 6
+  },
+  {
+    "AppName": "图片转ico",
+    "AppType": "实用工具",
+    "ExeName": "ToYcon",
+    "ExeFolderName": "",
+    "HitNumber": 1
+  },
+  {
+    "AppName": "屏幕截图",
+    "AppType": "实用工具",
+    "ExeName": "WINSNAP",
+    "ExeFolderName": "",
+    "HitNumber": 0
+  },
+  {
+    "AppName": "屏幕截图",
+    "AppType": "实用工具",
+    "ExeName": "FSCapture",
+    "ExeFolderName": "FastStoneCapture",
+    "HitNumber": 1
+  },
+  {
+    "AppName": "gif录屏",
+    "AppType": "实用工具",
+    "ExeName": "licecap",
+    "ExeFolderName": "",
+    "HitNumber": 0
+  },
+  {
+    "AppName": "视频播放",
+    "AppType": "实用工具",
+    "ExeName": "mpc-hc64",
+    "ExeFolderName": "MPC-HC",
+    "HitNumber": 4
+  },
+  {
+    "AppName": "PotPlayer",
+    "AppType": "实用工具",
+    "ExeName": "PotPlayer",
+    "ExeFolderName": "PotPlayer",
+    "HitNumber": 1
+  },
+  {
+    "AppName": "视频压缩",
+    "AppType": "实用工具",
+    "ExeName": "HandBrake",
+    "ExeFolderName": "HandBrake",
+    "HitNumber": 0
+  },
+  {
+    "AppName": "视频转码",
+    "AppType": "实用工具",
+    "ExeName": "ShanaEncoder",
+    "ExeFolderName": "ShanaEncoder",
+    "HitNumber": 0
+  },
+  {
+    "AppName": "Premiere",
+    "AppType": "实用工具",
+    "ExeName": "Premiere",
+    "ExeFolderName": "Adobe Premiere Pro CC Portable",
+    "HitNumber": 1
+  },
+  {
+    "AppName": "视频剪辑",
+    "AppType": "实用工具",
+    "ExeName": "SolveigMMVideoSplitterPortable",
+    "ExeFolderName": "SolveigMMVideoSplitterPortable",
+    "HitNumber": 0
+  },
+  {
+    "AppName": "Bandicam录屏",
+    "AppType": "实用工具",
+    "ExeName": "BandicamPortable",
+    "ExeFolderName": "",
+    "HitNumber": 0
+  },
+  {
+    "AppName": "摄像头",
+    "AppType": "实用工具",
+    "ExeName": "AMCap",
+    "ExeFolderName": "",
+    "HitNumber": 0
+  },
+      {
+        "AppName": "Notepad++",
+        "AppType": "实用工具",
+        "ExeName": "notepad++",
+        "ExeFolderName": "Notepad++",
+        "HitNumber": 50
+      },
+  {
+    "AppName": "SublimeText",
+    "AppType": "实用工具",
+    "ExeName": "sublime_text",
+    "ExeFolderName": "Sublime.Text.3",
+    "HitNumber": 0
+  },
+  {
+    "AppName": "UltraCompare",
+    "AppType": "实用工具",
+    "ExeName": "uc",
+    "ExeFolderName": "UltraCompare",
+    "HitNumber": 1
+  },
+  {
+    "AppName": "数据库连接",
+    "AppType": "实用工具",
+    "ExeName": "Database5Pro",
+    "ExeFolderName": "",
+    "HitNumber": 0
+  },
+  {
+    "AppName": "PanDownload2",
+    "AppType": "实用工具",
+    "ExeName": "PanDownload",
+    "ExeFolderName": "PanDownload2",
+    "HitNumber": 77
+  },
+  {
+    "AppName": "Fiddler",
+    "AppType": "实用工具",
+    "ExeName": "Fiddler",
+    "ExeFolderName": "Fiddler",
+    "HitNumber": 0
+  },
+  {
+    "AppName": "BCompare",
+    "AppType": "实用工具",
+    "ExeName": "BCompare",
+    "ExeFolderName": "Beyond Compare 4",
+    "HitNumber": 1
+  },
+  {
+    "AppName": "TeamViewer",
+    "AppType": "实用工具",
+    "ExeName": "TeamViewer",
+    "ExeFolderName": "TeamViewer",
+    "HitNumber": 15
+  },
+  {
+    "AppName": "bat转exe",
+    "AppType": "实用工具",
+    "ExeName": "Bat_To_Exe_Converter",
+    "ExeFolderName": "",
+    "HitNumber": 8
+  },
+  {
+    "AppName": "文件校验工具",
+    "AppType": "实用工具",
+    "ExeName": "Hash",
+    "ExeFolderName": "",
+    "HitNumber": 13
+  },
+  {
+    "AppName": "SSD检测",
+    "AppType": "实用工具",
+    "ExeName": "AS SSD Benchmark",
+    "ExeFolderName": "",
+    "HitNumber": 2
+  },
+  {
+    "AppName": "IDMan",
+    "AppType": "实用工具",
+    "ExeName": "IDMan",
+    "ExeFolderName": "IDMan",
+    "HitNumber": 56
+  },
+  {
+    "AppName": "冰点文库下载",
+    "AppType": "实用工具",
+    "ExeName": "Fish",
+    "ExeFolderName": "Fish",
+    "HitNumber": 1
+  },
+  {
+    "AppName": "ONES刻录",
+    "AppType": "实用工具",
+    "ExeName": "ONES",
+    "ExeFolderName": "",
+    "HitNumber": 0
+  },
+  {
+    "AppName": "UltraISO",
+    "AppType": "实用工具",
+    "ExeName": "UltraISO",
+    "ExeFolderName": "",
+    "HitNumber": 0
+  },
+  {
+    "AppName": "虚拟光驱",
+    "AppType": "实用工具",
+    "ExeName": "virtualdrivemaster",
+    "ExeFolderName": "",
+    "HitNumber": 0
+  },
+  {
+    "AppName": "PDF阅读",
+    "AppType": "实用工具",
+    "ExeName": "PDF",
+    "ExeFolderName": "",
+    "HitNumber": 0
+  },
+  {
+    "AppName": "颜色拾取",
+    "AppType": "实用工具",
+    "ExeName": "Colors",
+    "ExeFolderName": "Colors",
+    "HitNumber": 0
+  },
+  {
+    "AppName": "多用剪切板",
+    "AppType": "实用工具",
+    "ExeName": "subclipx",
+    "ExeFolderName": "",
+    "HitNumber": 0
+  },
+  {
+    "AppName": "哈希验证",
+    "AppType": "实用工具",
+    "ExeName": "Hasher",
+    "ExeFolderName": "Hasher",
+    "HitNumber": 8
+  },
+  {
+    "AppName": "ShareX",
+    "AppType": "实用工具",
+    "ExeName": "ShareX",
+    "ExeFolderName": "ShareX",
+    "HitNumber": 1
+  },
+  {
+    "AppName": "h264encoder",
+    "AppType": "实用工具",
+    "ExeName": "h264encoder",
+    "ExeFolderName": "",
+    "HitNumber": 1
+  },
+  {
+    "AppName": "Wifi共享",
+    "AppType": "实用工具",
+    "ExeName": "MyWifiAP",
+    "ExeFolderName": "MyWifiAP",
+    "HitNumber": 32
+  },
+  {
+    "AppName": "文字转语音",
+    "AppType": "实用工具",
+    "ExeName": "Balabolka",
+    "ExeFolderName": "Balabolka",
+    "HitNumber": 2
+  },
+  {
+    "AppName": "MP3录音",
+    "AppType": "实用工具",
+    "ExeName": "rec",
+    "ExeFolderName": "",
+    "HitNumber": 0
+  },
+  {
+    "AppName": "7z压缩",
+    "AppType": "实用工具",
+    "ExeName": "7-Zip",
+    "ExeFolderName": "",
+    "HitNumber": 0
+  },
+  {
+    "AppName": "光盘刻录",
+    "AppType": "实用工具",
+    "ExeName": "BurnAwarePortable",
+    "ExeFolderName": "BurnAwarePortable",
+    "HitNumber": 0
+  },
+  {
+    "AppName": "CloseADs",
+    "AppType": "实用工具",
+    "ExeName": "CloseADs",
+    "ExeFolderName": "",
+    "HitNumber": 0
+  },
+  {
+    "AppName": "单文件打包",
+    "AppType": "实用工具",
+    "ExeName": "enigmavb",
+    "ExeFolderName": "enigmavb",
+    "HitNumber": 0
+  },
+  {
+    "AppName": "FlashFXP",
+    "AppType": "实用工具",
+    "ExeName": "FlashFXP",
+    "ExeFolderName": "",
+    "HitNumber": 0
+  },
+  {
+    "AppName": "文件恢复大师",
+    "AppType": "实用工具",
+    "ExeName": "recuva",
+    "ExeFolderName": "recuva",
+    "HitNumber": 0
+  },
+  {
+    "AppName": "快速启动",
+    "AppType": "实用工具",
+    "ExeName": "Launchy",
+    "ExeFolderName": "Launchy",
+    "HitNumber": 0
+  }
+]

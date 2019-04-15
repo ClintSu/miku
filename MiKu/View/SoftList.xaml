@@ -1,0 +1,290 @@
+﻿<Window x:Class="MiKu.View.SoftList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:local="clr-namespace:MiKu.View"
+        mc:Ignorable="d" 
+        Width="966"  
+        Height="600"
+        AllowsTransparency="True"
+        Background="Transparent"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None">
+
+    <Window.Resources>
+        <Style x:Key="ListBoxItemStyle" TargetType="{x:Type ListBoxItem}">
+            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="Height" Value="50" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                        <Grid x:Name="gridItem" Background="Transparent">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50"/>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100"/>
+                            </Grid.ColumnDefinitions>
+                            <Border
+                                x:Name="borderItem"
+                                Grid.Column="0" Background="#80EEEEEE"
+                                Grid.ColumnSpan="6"
+                                BorderThickness="0,0,0,1" 
+                                BorderBrush="#FFA1B5FD"
+                                CornerRadius="5">
+                                <Border.Effect>
+                                    <DropShadowEffect
+                                        BlurRadius="5"
+                                        Direction="270"
+                                        Opacity="0.10"
+                                        ShadowDepth="4"
+                                        Color="#5C7FFF" />
+                                </Border.Effect>
+                            </Border>
+                            <Image
+                                Grid.Column="0"
+                                Margin="5" Source="{Binding Text, ElementName=tb, Converter={StaticResource ButtonImageConverter}}"/>
+                            <TextBlock
+                                x:Name="FileName"
+                                Grid.Column="1" Margin="5,0,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                FontSize="18"
+                                Foreground="#474747"
+                                Text="{Binding AppName}"
+                                TextWrapping="NoWrap" />
+
+                            <TextBlock
+                                Grid.Column="2" Name="tb"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                FontSize="18"
+                                Foreground="#474747"
+                                Text="{Binding ExeName}"
+                                TextWrapping="NoWrap" />
+
+                            <TextBlock
+                                Grid.Column="3"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                FontSize="18"
+                                Foreground="#474747"
+                                Text="{Binding ExeFolderName}"
+                                TextWrapping="NoWrap"
+                               />
+
+                            <TextBlock
+                                Grid.Column="4"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                FontSize="18"
+                                Foreground="#474747"
+                                Text="{Binding AppType}"
+                                TextWrapping="NoWrap"
+                              />
+
+                            <TextBlock
+                                Grid.Column="5"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                FontSize="18"
+                                Foreground="#474747"
+                                Text="{Binding HitNumber}"
+                                TextWrapping="NoWrap"
+                            />
+                        </Grid>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Trigger.Setters>
+                                    <Setter TargetName="borderItem" Property="Background" Value="#205b6cff" />
+                                </Trigger.Setters>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ListBoxStyle" TargetType="{x:Type ListBox}">
+            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListBox}">
+                        <ScrollViewer
+                            Margin="10,0"
+                            FocusVisualStyle="{x:Null}"
+                            HorizontalScrollBarVisibility="Disabled"
+                            VerticalScrollBarVisibility="Auto">
+                            <ScrollViewer.Resources>
+                                <sys:Double x:Key="{x:Static SystemParameters.VerticalScrollBarWidthKey}">1</sys:Double>
+                            </ScrollViewer.Resources>
+                            <ItemsPresenter Width="{Binding ElementName=listBox, Path=Width, Mode=OneWay}" FocusVisualStyle="{x:Null}" />
+                        </ScrollViewer>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        </Style>
+    </Window.Resources>
+    <Border
+        Background="#EEEEEE"
+        Margin="10" MouseLeftButtonDown="Border_MouseLeftButtonDown"
+        BorderBrush="Black"
+        BorderThickness="1"
+        CornerRadius="5">
+        <Border.Effect>
+            <DropShadowEffect Opacity="0.8" ShadowDepth="0" />
+        </Border.Effect>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition />
+                <RowDefinition Height="30" />
+            </Grid.RowDefinitions>
+
+            <Border Background="#474747"></Border>
+            <!--  上标题栏  -->
+            <Grid Grid.Row="0" 
+                Height="20"  
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Margin="10,0">
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock
+                        VerticalAlignment="Bottom"
+                        Text="所有程序" 
+                        Margin="3,0" FontSize="14"
+                        Foreground="#AACD9E" />
+                </StackPanel>
+            </Grid>
+
+            <StackPanel Grid.Row="0"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                FlowDirection="RightToLeft"
+                Orientation="Horizontal">
+                <Button
+                    Name="closeButton"
+                    Width="44"
+                    Height="30"
+                    Click="closeButton_Click"
+                    Content="x"
+                    Foreground="{Binding AppSetting.FontColor}"
+                    Style="{DynamicResource SysButtonStyle}" />
+
+                <Rectangle
+                    Width="1"
+                    Height="17"
+                    Stroke="Black"
+                    StrokeThickness="0">
+                    <Rectangle.Fill>
+                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                            <GradientStop Color="#85000000" />
+                            <GradientStop Offset="1" Color="#1A4D4D4D" />
+                        </LinearGradientBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <Button
+                    Name="maxButton"
+                    Width="44"
+                    Height="30"
+                    Click="maxButton_Click"
+                    Content="max"
+                    Foreground="{Binding AppSetting.FontColor}"
+                    Style="{DynamicResource MaxButtonStyle}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="../images/MAX.png" Stretch="Uniform" />
+                    </Button.Background>
+                </Button>
+
+                <Rectangle
+                    Width="1"
+                    Height="17"
+                    Stroke="Black"
+                    StrokeThickness="0">
+                    <Rectangle.Fill>
+                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                            <GradientStop Color="#85000000" />
+                            <GradientStop Offset="1" Color="#1A4D4D4D" />
+                        </LinearGradientBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+
+                <Button
+                    Name="mniButton"
+                    Width="44"
+                    Height="30"
+                    Click="mniButton_Click"
+                    Content="mni"
+                    Style="{DynamicResource MaxButtonStyle}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="../images/MNI.png" Stretch="Uniform" />
+                    </Button.Background>
+                </Button>
+
+
+                <Rectangle
+                    Width="1"
+                    Height="17"
+                    Stroke="Black"
+                    StrokeThickness="0">
+                    <Rectangle.Fill>
+                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                            <GradientStop Color="#85000000" />
+                            <GradientStop Offset="1" Color="#1A4D4D4D" />
+                        </LinearGradientBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+            </StackPanel>
+
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Background="#FF505DE2" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="100"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.Column="0" Grid.ColumnSpan="2" BorderThickness="0,0,1,0" BorderBrush="Beige">
+                        <TextBlock Text="显示名称" Foreground="White"  VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18"></TextBlock>
+                    </Border>
+                    <Border Grid.Column="2" BorderThickness="0,0,1,0" BorderBrush="Beige">
+                        <TextBlock Text="程序名称" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18"></TextBlock>
+                    </Border>
+                    <Border Grid.Column="3" BorderThickness="0,0,1,0" BorderBrush="Beige">
+                        <TextBlock Text="程序文件夹" Foreground="White"  VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18"></TextBlock>
+                    </Border>
+                    <Border Grid.Column="4" BorderThickness="0,0,1,0" BorderBrush="Beige">
+                        <TextBlock Text="类型" Foreground="White"  VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18"></TextBlock>
+                    </Border>
+                    <Border Grid.Column="5">
+                        <TextBlock Text="点击" Foreground="White"  VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18"></TextBlock>
+                    </Border>
+                </Grid>
+                <ListBox Grid.Row="1" Style="{StaticResource ListBoxStyle}" ItemContainerStyle="{StaticResource ListBoxItemStyle}"
+                    ItemsSource="{Binding AppFiles}" VerticalAlignment="Top" Margin="0,5">
+                </ListBox>
+            </Grid>
+
+            <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="10,0">
+                <TextBlock Text="应用数量：" VerticalAlignment="Center"></TextBlock>
+                <TextBlock Name="tbCount" Text="{Binding AppFiles.Count}" VerticalAlignment="Center"></TextBlock>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>
+    
+

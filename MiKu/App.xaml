@@ -1,0 +1,18 @@
+﻿<Application
+    x:Class="MiKu.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:MiKu"
+    ShutdownMode="OnExplicitShutdown"
+    StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="styles/ButtonStyle.xaml" />
+                <ResourceDictionary Source="styles/ListBoxStyle.xaml" />
+                <ResourceDictionary Source="styles/TabControlStyle.xaml" />
+                <ResourceDictionary Source="ViewModelBase/NotifyIconResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

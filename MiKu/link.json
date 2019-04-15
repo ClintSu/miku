@@ -1,0 +1,42 @@
+[
+  {
+    "LinkName": "Google",
+    "LinkUrl": "www.google.com.hk"
+  },
+  {
+    "LinkName": "百度",
+    "LinkUrl": "www.baidu.com"
+  },
+  {
+    "LinkName": "Bing",
+    "LinkUrl": "cn.bing.com"
+  },
+  {
+    "LinkName": "GitHub",
+    "LinkUrl": "github.com"
+  },
+  {
+    "LinkName": "XX-Net",
+    "LinkUrl": "https://github.com/XX-net/XX-Net"
+  },
+  {
+    "LinkName": "🍊橙子小站",
+    "LinkUrl": "http://iope.top/"
+  },
+  {
+    "LinkName": "老殁软件",
+    "LinkUrl": "https://www.laomoit.com/"
+  },
+  {
+    "LinkName": "果核剥壳",
+    "LinkUrl": "https://www.ghpym.com/"
+  },
+  {
+    "LinkName": "胡萝卜周",
+    "LinkUrl": "http://www.carrotchou.blog/"
+  },
+  {
+    "LinkName": "心海e站",
+    "LinkUrl": "https://hrtsea.com/"
+  }
+]
